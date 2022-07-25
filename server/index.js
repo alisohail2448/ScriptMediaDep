@@ -12,6 +12,7 @@ import MessageRoute from './Routes/MessageRoute.js'
 
 // Routes
 
+
 const app = express();
 
 app.use(express.static('public'));
@@ -24,11 +25,15 @@ app.use(cors())
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
+const MONGO_URL = "mongodb://socialmedia:socialmedia@ac-jgm7hor-shard-00-00.i5c6b0l.mongodb.net:27017,ac-jgm7hor-shard-00-01.i5c6b0l.mongodb.net:27017,ac-jgm7hor-shard-00-02.i5c6b0l.mongodb.net:27017/SocialMedia-FullStack?ssl=true&replicaSet=atlas-ybwcz8-shard-0&authSource=admin&retryWrites=true&w=majority"
+
+
+// const PORT = process.env.PORT || 5000;
 
 
 
 mongoose
-  .connect(process.env.MONGO_DB, {
+  .connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
