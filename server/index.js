@@ -25,15 +25,11 @@ app.use(cors())
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
-const MONGO_URL = "mongodb://socialmedia:socialmedia@ac-jgm7hor-shard-00-00.i5c6b0l.mongodb.net:27017,ac-jgm7hor-shard-00-01.i5c6b0l.mongodb.net:27017,ac-jgm7hor-shard-00-02.i5c6b0l.mongodb.net:27017/SocialMedia-FullStack?ssl=true&replicaSet=atlas-ybwcz8-shard-0&authSource=admin&retryWrites=true&w=majority"
-
-
-// const PORT = process.env.PORT || 5000;
 
 
 
 mongoose
-  .connect(MONGO_URL, {
+  .connect(process.env.MONGO_DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
